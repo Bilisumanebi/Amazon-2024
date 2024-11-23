@@ -4,6 +4,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from './LowerHeader';
+import { Link } from 'react-router-dom';
 
 
 
@@ -13,7 +14,7 @@ function Header() {
             <>
                   <div className= {classes.header_container} >
                         <div className={classes.logo_container}>
-                              <a href=""><img src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" /></a>
+                              <Link to ="/"><img src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" /></Link>
                               {/* <span></span> */}
                               <div className={classes.delivery}>
                                     <span>
@@ -42,20 +43,20 @@ function Header() {
                                                 <option value="">EN</option>
                                           </select>
                                     </a>
-                                    <a href="">
+                                    <Link to="/SignIn">
                                     <div>
                                           <p>Sign In</p>
                                           <span>Account & Lists</span>
                                     </div>
-                                    </a>
-                                    <a href="">
+                                    </Link>
+                                    <Link to="/orders">
                                           <p>Returns</p>
                                           <span>orders</span>
-                                    </a>
-                                    <a href="" className={classes.cart}>
+                                    </Link>
+                                    <Link to="/cart" className={classes.cart}>
                                           <BiCart size={35}/>
                                           <span>0</span>
-                                    </a>
+                                    </Link>
                               </div>
                               
                         </div>

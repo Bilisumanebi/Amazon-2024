@@ -32,8 +32,6 @@ const Product = () => {
                               <Productcard product={singleProduct} key={singleProduct.id}/>
                         ))
 )}
-
-
             </section>
       )
 }
