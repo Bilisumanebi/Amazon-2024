@@ -7,7 +7,7 @@
       {
             i: 1,
             titleLink: "women's clothing ",
-            name: "Women's clothing ",
+            name: "women's clothing ",
             imageLink: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       },
       {
@@ -25,7 +25,7 @@
       {
             i:4,
             titleLink: "jewelery",
-            name: " jewelery",
+            name: "jewelery",
             imageLink: 'https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg',
       },
       

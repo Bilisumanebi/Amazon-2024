@@ -6,6 +6,8 @@ import Orders from './Pages/Orders/Orders'
 import Cart from './Pages/Cart/Cart'
 import SignIn from './Pages/Auth/SignIn'
 import Results from './Pages/Results/Results'
+import ProductDeatail from './Pages/ProductDetail/ProductDeatail'
+// import { useParams } from 'react-router-dom'
 
 const Routing = () => {
       return (
@@ -15,9 +17,9 @@ const Routing = () => {
                         <Route path='/signIn' element={<SignIn />}   />
                         <Route path='/payment' element={<Payment />}  />
                         <Route path='/orders' element={<Orders />} />
-                        <Route path='/category/:categoryName' element={<Results />} />
-                        <Route path='/cart' element={<Cart />} />
-                        <Route   />
+                        <Route path="/category/:categoryName" element={<Results />} />
+                        <Route path='/products/:productId' element={<ProductDeatail />}/>
+                        <Route path='/cart' element={<Cart />} />                      
                   </Routes>
 
             </Router>
