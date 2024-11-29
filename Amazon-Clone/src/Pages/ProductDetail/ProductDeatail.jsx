@@ -33,12 +33,9 @@ const ProductDeatail = () => {
       return (
             <>
             <LayOut>
-                  {isLoading? (<Loader />):(<Productcard product={product} flex={true} renderDesc={true}/>)}
+                  {isLoading? (<Loader />):(<Productcard  product={product} flex={true} renderDesc={true} renderAdd={true}/>)}
                   
-
-            </LayOut>
-                  
-                              
+            </LayOut>                                               
             </>
             
       )

@@ -26,8 +26,9 @@ const Product = () => {
             <>
                   {isLoading ? ( <Loader />) : (<section className={classes.products_container}>
                               {products?.length > 0 ? (products.map((singleProduct) => (
-
-                                    <Productcard product={singleProduct} key={singleProduct.id} />
+                                    
+                                    
+                                    <Productcard product={singleProduct} key={singleProduct.id}  renderAdd={true}/>
                               ))
                               ) : (
                                           <p>No products available.</p>
@@ -39,33 +40,8 @@ const Product = () => {
 };
    
       
-    
-//       return (
-//             <>
-//            { isLoading ? (<Loader />):(
-//                   <section className={classes.products_container}>
-                        
-//                         {products?.map((singleProduct)=> (                           
-                              
-//                               <Productcard product={singleProduct} key={singleProduct.id}/>
-//                   ))}
-//                   </section>
-//             )}
-            
 
-//             </>           
-//       )
-// }
 
 export default Product
 
 
-
-                  {/* {products.length===0? (
-                        <p>Loading...</p>
-                  ):(                 
-                        products?.map((singleProduct)=> (                           
-                              
-                              <Productcard product={singleProduct} key={singleProduct.id}/>
-                        ))
-)} */}

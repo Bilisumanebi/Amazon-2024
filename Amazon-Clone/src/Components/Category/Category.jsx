@@ -10,7 +10,7 @@ const Category = () => {
                   {CategoryData.map((infos )=>{
                         // console.log(infos);
                         return (<CategoryCard 
-                              key={infos.id}
+                              key={infos.i}
                               {...infos}
                               />
                         )
