@@ -29,7 +29,7 @@ const Cart = () => {
                               {cart.length ==0? (<p>Your Cart is Empty</p>): (
                                     cart.map((item ) => {
                                           return <section className={classes.cart_product}>
-                                                <Productcard key={item.id} product={item} flex={true} renderDesc={true} renderAdd={false}/>
+                                                <Productcard  product={item} key={item.id} flex={true} renderDesc={true} renderAdd={false}/>
                                                 <div className={classes.btn_container}>
                                                       <button className={classes.btn} onClick={()=> increment(item)}>
                                                             <IoIosArrowUp size={25}/>
@@ -47,7 +47,7 @@ const Cart = () => {
                               }
                         </div>
                         <div>
-                              {cart.length > 0 && (
+                              {cart.length !== 0 && (
                                     <div className={classes.subtotal}>
                                           <p>Subtotal ({cart.length} items) </p>
                                           <CurrencyFormat amount={total}/>
@@ -56,7 +56,7 @@ const Cart = () => {
                                                 <small>This order contains a gift</small>
 
                                           </span>
-                                          <Link to='/payments'>Proceed to checkout</Link>
+                                          <Link to='/payment'>Proceed to checkout</Link>
 
                                     </div>
                               )}
