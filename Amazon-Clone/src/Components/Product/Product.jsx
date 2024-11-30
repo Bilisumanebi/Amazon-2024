@@ -18,21 +18,16 @@ const Product = () => {
                   console.log(err);
                   setIsLoading(false)
             })
-
       }, [])
-
 
       return (
             <>
                   {isLoading ? ( <Loader />) : (<section className={classes.products_container}>
-                              {products?.length > 0 ? (products.map((singleProduct) => (
-                                    
-                                    
+                              {products?.length > 0 ? (products.map((singleProduct) => (                                                                        
                                     <Productcard product={singleProduct} key={singleProduct.id}  renderAdd={true}/>
-                              ))
-                              ) : (
+                              ))) : (
                                           <p>No products available.</p>
-                  )}
+                                    )}
                         </section>
                         )}
             </>

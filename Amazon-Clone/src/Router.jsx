@@ -4,7 +4,7 @@ import Landing from './Pages/Landing/Landing'
 import Payment from './Pages/Payment/Payment'
 import Orders from './Pages/Orders/Orders'
 import Cart from './Pages/Cart/Cart'
-import SignIn from './Pages/Auth/SignIn'
+import Auth from './Pages/Auth/Auth'
 import Results from './Pages/Results/Results'
 import ProductDeatail from './Pages/ProductDetail/ProductDeatail'
 // import { useParams } from 'react-router-dom'
@@ -14,7 +14,7 @@ const Routing = () => {
             <Router>
                   <Routes>
                         <Route path='/' element={<Landing />}   />          
-                        <Route path='/signIn' element={<SignIn />}   />
+                        <Route path='/auth' element={<Auth />}   />
                         <Route path='/payment' element={<Payment />}  />
                         <Route path='/orders' element={<Orders />} />
                         <Route path="/category/:categoryName" element={<Results />} />

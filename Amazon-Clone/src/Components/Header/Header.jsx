@@ -6,12 +6,13 @@ import { BiCart } from "react-icons/bi";
 import LowerHeader from './LowerHeader';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataProvider/Dataprovider';
+import { auth } from '../../Utility/firebase';
 
 
 
 
 function Header() {
-      const [{cart}, dispatch] = useContext(DataContext);
+      const [{user, cart}, dispatch] = useContext(DataContext);
       const totalItem = cart.reduce((amount, item) =>{
             return item.amount + amount}, 0);
       // console.log(cart.length);
@@ -38,22 +39,35 @@ function Header() {
                                     <option value="">All</option>
                               </select>
                               <input type="text" placeholder='Search Amazon' />
-                              <BsSearch size={25}/>
+                              <BsSearch size={38}/>
 
                         </div>
                         <div>
                               <div className={classes.order_container}>
-                                    <a href="" className={classes.language}>
+                                    <Link to="" className={classes.language}>
                                           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg/1024px-Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg.png" alt="" />
                                           <select>
                                                 <option value="">EN</option>
                                           </select>
-                                    </a>
-                                    <Link to="/SignIn">
+                                    </Link>
+                                    <Link to={!user && "/Auth"}>
                                     <div>
-                                          <p>Sign In</p>
-                                          <span>Account & Lists</span>
-                                    </div>
+                                          {user ? (
+                                                <>
+                                                      <p>Hello {user ?.email?.split("@")[0]} </p> 
+                                                      <span onClick={()=> (user ? auth.signOut() : null)}>
+                                                      Sign Out
+                                                      </span>
+                                                
+                                                </>
+                                                ) : (
+                                                <>
+                                                      <p>Hello, Sign in</p>
+                                                      <span>Account & Lists</span>
+                                                </>
+                                          )}
+
+                                    </div>                                   
                                     </Link>
                                     <Link to="/orders">
                                           <p>Returns</p>
