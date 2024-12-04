@@ -42,6 +42,10 @@ export const reducer = (state, action) => {
                         ...state,
                         cart: newCart,
                   }
+            case Type.EMPTY_CART:
+                  return {
+                        ...state,
+                        cart: [],}
             case Type.SET_USER:
                   return {
                         ...state,

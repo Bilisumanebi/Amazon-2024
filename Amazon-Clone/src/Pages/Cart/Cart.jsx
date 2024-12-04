@@ -9,6 +9,8 @@ import { Type } from '../../Utility/action.type';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 const Cart = () => {
+
+
       const [{cart, user } , dispatch] = useContext(DataContext);
       const total = cart.reduce((amount, item) =>{
             return item.price * item.amount + amount}, 0);

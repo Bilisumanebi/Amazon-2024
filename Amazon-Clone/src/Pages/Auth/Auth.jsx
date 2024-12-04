@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import classes from './signup.module.css'
 // import LayOut from '../../Components/LayOut/LayOut'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { auth } from '../../Utility/firebase'
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
 import { DataContext } from '../../Components/DataProvider/Dataprovider'
@@ -15,6 +15,8 @@ const Auth = () => {
       const [{user}, dispatch] = useContext(DataContext);
       const [loading, setLoading] = useState({signIn: false, signUp: false});
       const navigate = useNavigate();
+      const navStateData = useLocation();
+      console.log(navStateData);
 
       // console.log(email, password);
       // console.log(user);
@@ -30,7 +32,7 @@ const Auth = () => {
                         console.log(user);
                         dispatch({type: 'SET_USER', user: user})
                         setLoading({...loading, signIn: false, signUp: false})
-                        navigate('/')
+                        navigate(navStateData?.state?.redirect ||'/')
                   })
                   .catch((error) => {
                         setError(error.message);
@@ -45,7 +47,7 @@ const Auth = () => {
                         console.log(user);
                         dispatch({type: 'SET_USER', user: user})
                         setLoading({...loading, signIn: false, signUp: false})
-                        navigate('/')
+                        navigate(navStateData?.state?.redirect || "/");
                   })
                   .catch((error) => {
                         setError(error.message);
@@ -65,6 +67,10 @@ const Auth = () => {
 
                   <div className={classes.login_container}>
                         <h1>Sign In</h1>
+                        {
+                              navStateData?.state?.msg && 
+                              <p style={{paddingTop: "5px", color: "red", alignItems: "center"}}>{navStateData?.state?.msg}</p>
+                        }
                         <form action="">
                               <div>
                                     <label htmlFor="email">Email</label>
