@@ -7,7 +7,7 @@ import "firebase/compat/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBNn4cBr3C93WsgAwIDptol5kRBvo_cxSs",
+ API = Hidden
   authDomain: "clone-2024-f1710.firebaseapp.com",
   projectId: "clone-2024-f1710",
   storageBucket: "clone-2024-f1710.firebasestorage.app",
